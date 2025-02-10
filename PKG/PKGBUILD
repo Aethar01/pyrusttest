@@ -19,6 +19,8 @@ build() {
 package() {
         cd "${srcdir}" || exit
         cd pyrusttest || exit
-        python -m installer install --destdir="${pkgdir}" target/wheels/*.whl
+        python -m installer --destdir="${pkgdir}" target/wheels/*.whl
         install -Dm755 python/prt "${pkgdir}/usr/bin/prt"
     }
+
+sha256sums=('SKIP')
