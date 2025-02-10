@@ -19,6 +19,7 @@ dist/
 eggs/
 lib/
 lib64/
+lib64
 parts/
 sdist/
 var/
@@ -28,6 +29,7 @@ venv/
 *.egg-info/
 .installed.cfg
 *.egg
+pyenv.cfg
 
 # Installer logs
 pip-log.txt
