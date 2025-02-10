@@ -12,7 +12,7 @@ fn printrs(s: String) -> PyResult<()> {
 }
 
 #[pymodule]
-fn pyrusttestrs(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn pyrusttest(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(hello_from_rust, m)?)?;
     m.add_function(wrap_pyfunction!(printrs, m)?)?;
     Ok(())

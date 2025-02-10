@@ -1,4 +1,4 @@
-from pyrusttestrs import hello_from_rust, printrs
+from pyrusttest.pyrusttest import hello_from_rust, printrs
 
 
 def main():
