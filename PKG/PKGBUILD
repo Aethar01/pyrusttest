@@ -1,0 +1,24 @@
+pkgname=pyrusttest
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="placeholder"
+arch=('x86_64')
+url="https://github.com/Aethar01/pyrusttest"
+license=('MIT')
+makedepends=('python' 'git' 'maturin' 'python-installer')
+depends=('python')
+provides=('pyrusttest')
+source=("git+${url}.git")
+
+build() {
+        cd "${srcdir}" || exit
+        cd pyrusttest || exit
+        maturin build --release
+    }
+
+package() {
+        cd "${srcdir}" || exit
+        cd pyrusttest || exit
+        python -m installer install --destdir="${pkgdir}" target/wheels/*.whl
+        install -Dm755 python/prt "${pkgdir}/usr/bin/prt"
+    }
